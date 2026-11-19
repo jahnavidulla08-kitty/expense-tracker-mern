@@ -1,67 +1,94 @@
 # Expense Tracker – MERN Stack
 
-A browser-based expense tracker built with React, Node.js, Express and MongoDB.
+A browser-based Expense Tracker application built using React, Node.js, Express.js, and MongoDB.
+
+## Project Details
+
+- **Developer:** Dulla Jahnavi Sirivalli
+- **Project:** Expense Tracker
+- **Track:** MERN Stack Development
 
 ## Features
-- Add, view, edit and delete expenses
-- Filter expenses by category
-- Total amount updates based on the selected category
-- Frontend and backend validation
-- MongoDB persistence
-- Responsive dashboard UI
+
+- Add, view, edit, and delete expenses.
+- Filter expenses by category.
+- Automatically update the total amount based on selected category.
+- Frontend and backend validation.
+- Store expense data in MongoDB.
+- Responsive dashboard interface.
+
+## Technologies Used
+
+- **Frontend:** React.js, CSS
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **Tools:** VS Code, Git, GitHub
 
 ## Requirements
-- Node.js LTS and npm
-- MongoDB local installation or MongoDB Atlas connection
+
+- Node.js and npm
+- MongoDB local installation or MongoDB Atlas account
 - VS Code (recommended)
 
-## 1. Start MongoDB
-Use a local MongoDB server, or create a MongoDB Atlas cluster and copy its connection string.
+## Installation and Setup
 
-## 2. Configure the backend
-Open a terminal in the `backend` folder:
+### 1. Clone the Repository
 
 ```bash
+git clone https://github.com/jahnavidulla08-kitty/expense-tracker-mern.git
+cd expense-tracker-mern
+```
+
+### 2. Configure the Backend
+
+```bash
+cd backend
 npm install
 ```
 
-Copy `.env.example` to `.env`, then set your MongoDB connection string:
+Create a `.env` file using `.env.example`.
+
+Add your MongoDB connection details:
 
 ```env
 PORT=5000
-MONGO_URI=mongodb://127.0.0.1:27017/expense_tracker
+MONGO_URI=your_mongodb_connection_string
 ```
 
-For MongoDB Atlas, replace the value with your Atlas connection string. Keep `.env` private; do not upload it to GitHub.
+**Note:** Keep your `.env` file private. Never upload it to GitHub.
 
-Start the backend:
+### 3. Start the Backend
 
 ```bash
 npm run dev
 ```
 
-The API runs at `http://localhost:5000`.
+Backend runs at `http://localhost:5000`.
 
-## 3. Start the frontend
-Open a second terminal in the `frontend` folder:
+### 4. Start the Frontend
+
+Open a second terminal:
 
 ```bash
+cd frontend
 npm install
 npm run dev
 ```
 
 Open the local URL shown by Vite (usually `http://localhost:5173`).
 
-## API endpoints
+## API Endpoints
 
 | Method | Endpoint | Purpose |
 |---|---|---|
 | POST | `/api/expenses` | Create an expense |
-| GET | `/api/expenses` | List expenses; optional `?category=Food` |
+| GET | `/api/expenses` | Get all expenses |
 | PUT | `/api/expenses/:id` | Update an expense |
 | DELETE | `/api/expenses/:id` | Delete an expense |
 
-Example request body:
+The GET endpoint supports category filtering using `?category=Food`.
+
+### Example Request Body
 
 ```json
 {
@@ -72,13 +99,15 @@ Example request body:
 }
 ```
 
-## Project structure
+## Project Structure
 
 ```text
-expense-tracker/
+expense-tracker-mern/
 ├── backend/
-│   ├── models/Expense.js
-│   ├── routes/expenseRoutes.js
+│   ├── models/
+│   │   └── Expense.js
+│   ├── routes/
+│   │   └── expenseRoutes.js
 │   ├── .env.example
 │   ├── package.json
 │   └── server.js
@@ -90,3 +119,7 @@ expense-tracker/
     ├── index.html
     └── package.json
 ```
+
+## GitHub Repository
+
+https://github.com/jahnavidulla08-kitty/expense-tracker-mern
